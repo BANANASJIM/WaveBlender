@@ -1,0 +1,35 @@
+{
+  "Nx": 88,
+  "Ny": 88,
+  "Nz": 88,
+  "cellsize": 0.007,
+  "FDTD_srate": 88200,
+  "shader_srate": 44100,
+  "blendrate": 100,
+  "ts": 0.0,
+  "tf": 8.0,
+  "damping": 0.0,
+  "objects": {
+    "1. Phone": {
+      "shader": "Speaker",
+      "offset": [ 0.0, -0.2, 0.0 ],
+      "meshFile": "../Scenes/CupPhone/phone.obj",
+      "wavFile": "../Scenes/CupPhone/marimba.wav",
+      "direction": 2,
+      "animFile": "../Scenes/CupPhone/phone_anim.txt"
+    },
+    "2. Cup": {
+      "shader": "Occluder",
+      "offset": [ 0.0, -0.2, 0.0 ],
+      "meshFile": "../Scenes/CupPhone/cup.obj",
+      "animFile": ""
+    }
+  },
+  "listeners": {
+    "1. Main Listener": {
+      "format": "Mono",
+      "output": "CupPhone_out",
+      "position": [ 0.19, 0.16, 0.24 ]
+    }
+  }
+}

@@ -1,0 +1,3 @@
+[submodule "Source/FluidSound"]
+	path = Source/FluidSound
+	url = https://github.com/kangruix/FluidSound.git
