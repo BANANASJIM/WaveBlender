@@ -94,7 +94,7 @@ double Solver::step(double time)
         const Eigen::Vector3d force = activeImpacts[rec_idx].impactVector;
         const int& vertexID = activeImpacts[rec_idx].appliedVertex;
 
-        forceTimestep = _eigenVectors.row(3*vertexID + 0) * force[0]
+        forceTimestep += _eigenVectors.row(3*vertexID + 0) * force[0]
             + _eigenVectors.row(3*vertexID + 1) * force[1]
             + _eigenVectors.row(3*vertexID + 2) * force[2];
     }
