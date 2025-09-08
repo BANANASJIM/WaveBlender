@@ -4,6 +4,8 @@ WaveBlender is a (proof-of-concept) finite-difference time-domain (FDTD) acousti
     
 > [WaveBlender: Practical Sound-Source Animation in Blended Domains](https://graphics.stanford.edu/papers/waveblender/). Kangrui Xue, Jui-Hsien Wang, Timothy R. Langlois, Doug L. James. *SIGGRAPH Asia 2024 Conference Papers*. 
 
+**9/8 Update:** This codebase has been [gaining some traction recently](https://www.youtube.com/watch?v=1bS7sHyfi58). Keep in mind that this is an early-gen prototype for research. There are plans to release a more comprehensive and useable sound rendering system later -- stay tuned :)
+
 ## Build Instructions
 
 **Dependencies:** C++17, CUDA, Eigen 3.4, libigl
