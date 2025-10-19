@@ -8,21 +8,58 @@ WaveBlender is a (proof-of-concept) finite-difference time-domain (FDTD) acousti
 
 ## Build Instructions
 
-**Dependencies:** C++17, CUDA, Eigen 3.4, libigl
+**Dependencies:** C++17, CUDA, Eigen 3.4+ (or 5.0+), libigl, Python 3.8+
+
+### Quick Setup (Recommended)
+
+```bash
+./setup.sh
+```
+
+This script will automatically check dependencies, build the project, setup Python environment, and optionally download additional scenes.
+
+### Manual Build
 
 Building is handled by CMake. For example, to build from source on Linux:
 
-    git clone https://github.com/kangruix/WaveBlender
-    cd WaveBlender && git submodule update --init --recursive
-    mkdir build && cd build && cmake -DCMAKE_BUILD_TYPE=Release ..
-    make -j4
+```bash
+git clone https://github.com/BANANASJIM/WaveBlender
+cd WaveBlender && git submodule update --init --recursive
 
-We provide an example scene in Scenes/CupPhone/. To run the code:
+# Setup Python environment
+python -m venv venv
+source venv/bin/activate
+pip install numpy matplotlib scipy soundfile
 
-    ./WaveBlender ../Scenes/CupPhone/config.json
-    python ../scripts/write_wav.py CupPhone_out.bin 88200
+# Build
+mkdir build && cd build
+cmake -DCMAKE_BUILD_TYPE=Release ..
+make -j4
+```
+
+### Running
+
+Quick run with interactive menu:
+```bash
+./run.sh
+```
+
+Or manually:
+```bash
+cd build
+./WaveBlender ../Scenes/CupPhone/config.json
+source ../venv/bin/activate
+python ../scripts/write_wav.py CupPhone_out.bin 88200
+```
 
 Afterwards, the simulated audio will be written to 'CupPhone_out.wav'. More scenes are available [here](https://graphics.stanford.edu/papers/waveblender/dataset/).
+
+### What's New in This Fork
+
+- ✅ **Eigen 5.0 compatibility** - Removed version constraints, upgraded libigl to v2.6.0
+- ✅ **One-click setup script** - `setup.sh` for automated installation
+- ✅ **Quick run script** - `run.sh` for easy scene execution
+- ✅ **Python venv support** - Isolated dependency management
 
 ### Miscellaneous
 
