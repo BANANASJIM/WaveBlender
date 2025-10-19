@@ -6,7 +6,7 @@ project(WaveBlender LANGUAGES C CXX)
 
 option(FORCE_CPU "Force CPU-only compilation (even if GPU is available)" OFF)
 
-find_package(Eigen3 3.4 REQUIRED)
+find_package(Eigen3 REQUIRED)
 
 list(PREPEND CMAKE_MODULE_PATH ${CMAKE_CURRENT_SOURCE_DIR}/cmake)
 include(libigl)
